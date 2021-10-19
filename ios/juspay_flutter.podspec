@@ -5,16 +5,17 @@
 Pod::Spec.new do |s|
   s.name             = 'juspay_flutter'
   s.version          = '0.0.1'
-  s.summary          = 'A new flutter plugin project.'
+  s.summary          = 'A flutter plugin for juspay payment SDK.'
   s.description      = <<-DESC
-A new flutter plugin project.
+A flutter plugin for juspay payment SDK.
                        DESC
-  s.homepage         = 'http://example.com'
+  s.homepage         = 'https://deep-rooted.co'
   s.license          = { :file => '../LICENSE' }
-  s.author           = { 'Your Company' => 'email@example.com' }
+  s.author           = { 'Deep Rooted.Co' => 'talktous@deep-rooted.co' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
+  s.dependency 'HyperSDK', '2.0.90'
   s.platform = :ios, '8.0'
 
   # Flutter.framework does not contain a i386 slice.
