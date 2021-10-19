@@ -1,7 +1,7 @@
 name: juspay_flutter
-description: A new flutter plugin project.
+description: A flutter plugin for juspay payment SDK.
 version: 0.0.1
-homepage:
+homepage: https://deep-rooted.co
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
