@@ -40,6 +40,12 @@ public class SwiftJuspayFlutterPlugin: NSObject, FlutterPlugin {
                 return
             }
             let event = response!["event"] as? String ?? ""
+            if event == "show_loader" {
+                self.juspay.invokeMethod("onShowLoader", arguments: "")
+            }
+            if event == "hide_loader" {
+                self.juspay.invokeMethod("onHideLoader", arguments: "")
+            }
             if event == "initiate_result" {
                 if let jsonData = try? JSONSerialization.data(withJSONObject: response!, options: .prettyPrinted) {
                     if let jsonString = String(data: jsonData, encoding: .utf8) {

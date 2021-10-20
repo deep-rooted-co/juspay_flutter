@@ -95,8 +95,10 @@ class JuspayFlutterPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, Plug
                 try {
                     when (data.getString("event")) {
                         "show_loader" -> {
+                            channel.invokeMethod("onShowLoader", "", invokeMethodResult)
                         }
                         "hide_loader" -> {
+                            channel.invokeMethod("onHideLoader", "", invokeMethodResult)
                         }
                         "initiate_result" -> {
                             channel.invokeMethod("onInitiateResult", data.toString(), invokeMethodResult)
