@@ -14,7 +14,7 @@ public class SwiftJuspayFlutterPlugin: NSObject, FlutterPlugin {
 
     public static func register(with registrar: FlutterPluginRegistrar) {
         let channel = FlutterMethodChannel(name: CHANNEL_NAME, binaryMessenger: registrar.messenger())
-        let instance = SwiftJuspayPlugin(channel, registrar)
+        let instance = SwiftJuspayFlutterPlugin(channel, registrar)
         registrar.addMethodCallDelegate(instance, channel: channel)
     }
 
