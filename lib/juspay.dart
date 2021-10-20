@@ -48,6 +48,10 @@ class Juspay {
 
   Future<dynamic> _juspayCallbacks(MethodCall methodCall) async {
     switch (methodCall.method) {
+      case 'onShowLoader':
+        return this.onShowLoader.call(jsonDecode(methodCall.arguments));
+      case 'onHideLoader':
+        return this.onHideLoader.call(jsonDecode(methodCall.arguments));
       case 'onInitiateResult':
         return this.onInitiateResult.call(jsonDecode(methodCall.arguments));
       case 'onProcessResult':
