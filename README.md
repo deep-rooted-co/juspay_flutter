@@ -2,6 +2,8 @@
 
 A flutter plugin for juspay payment SDK.
 
+[![CI](https://github.com/deep-rooted-co/juspay_flutter/actions/workflows/main.yml/badge.svg)](https://github.com/deep-rooted-co/juspay_flutter/actions/workflows/main.yml)
+
 ## Android Setup
 
 1. Add to `android/app/build.gradle`
