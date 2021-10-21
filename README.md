@@ -4,21 +4,33 @@ A flutter plugin for juspay payment SDK.
 
 [![CI](https://github.com/deep-rooted-co/juspay_flutter/actions/workflows/main.yml/badge.svg)](https://github.com/deep-rooted-co/juspay_flutter/actions/workflows/main.yml)
 
+## Flutter Setup
+
+1. Add plugin dependency in `pubspec.yaml`
+```yaml
+dependencies:
+  juspay_flutter:
+    git:
+      url: git@github.com:deep-rooted-co/juspay_flutter.git
+      ref: <Git Commit SHA>
+```
+**Note**: This method is only until we get this plugin published to pub.dev
+
 ## Android Setup
 
 1. Add to `android/build.gradle`
 ```gradle
 buildscript {
-    ...
+    ....
     repositories {
-        ...
+        ....
         maven {
             url "https://maven.juspay.in/jp-build-packages/hypersdk-asset-download/releases/"
         }
     }
 
     dependencies {
-        ...
+        ....
         classpath 'in.juspay:hypersdk-asset-plugin:1.0.3'
     }
 }
