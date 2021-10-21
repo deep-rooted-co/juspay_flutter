@@ -6,12 +6,30 @@ A flutter plugin for juspay payment SDK.
 
 ## Android Setup
 
-1. Add to `android/app/build.gradle`
+1. Add to `android/build.gradle`
+```gradle
+buildscript {
+    ...
+    repositories {
+        ...
+        maven {
+            url "https://maven.juspay.in/jp-build-packages/hypersdk-asset-download/releases/"
+        }
+    }
+
+    dependencies {
+        ...
+        classpath 'in.juspay:hypersdk-asset-plugin:1.0.3'
+    }
+}
+```
+
+2. Add to `android/app/build.gradle`
 ```gradle
 apply plugin: 'hypersdk-asset-plugin'
 ```
 
-2. Create file `android/app/MerchantConfig.txt` with the following content
+3. Create file `android/app/MerchantConfig.txt` with the following content
 ```txt
 clientId = <your client id>
 ```
