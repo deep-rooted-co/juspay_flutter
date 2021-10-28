@@ -23,8 +23,8 @@ class Juspay {
     _juspay.setMethodCallHandler(null);
   }
 
-  Future<bool?> isInitiated() async {
-    return _juspay.invokeMethod<bool>('isInitiated');
+  Future<bool?> isInitialised() async {
+    return _juspay.invokeMethod<bool>('isInitialised');
   }
 
   static Future<String> prefetch(Map<String, dynamic> params) async {

@@ -25,13 +25,13 @@ public class SwiftJuspayFlutterPlugin: NSObject, FlutterPlugin {
         case "initiate": initiate(args["params"] as! [String: Any], result)
         case "process": process(args["params"] as! [String: Any], result)
         case "terminate": terminate(result)
-        case "isInitiated": isInitiated(result)
+        case "isInitialised": isInitialised(result)
         default: result(FlutterMethodNotImplemented)
         }
     }
 
-    private func isInitiated(_ result: @escaping FlutterResult) {
-        result(HyperServices.isInitiated())
+    private func isInitialised(_ result: @escaping FlutterResult) {
+        result(hyperServices.isInitialised())
     }
 
     private func prefetch(_ params: [String: Any], _ result: @escaping FlutterResult) {
