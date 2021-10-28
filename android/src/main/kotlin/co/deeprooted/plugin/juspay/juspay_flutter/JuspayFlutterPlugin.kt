@@ -62,7 +62,17 @@ class JuspayFlutterPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, Plug
             "initiate" -> initiate(call.argument<Map<String, Any>>("params"), result)
             "process" -> process(call.argument<Map<String, Any>>("params"), result)
             "terminate" -> terminate(result)
+            "isInitiated" -> isInitiated(result)
             else -> result.notImplemented()
+        }
+    }
+
+    private fun isInitiated(result: Result) {
+        try {
+            var isInitiated = HyperServices.isInitiated()
+            result.success(isInitiated)
+        } catch(e: Exception) {
+            result.success(false)
         }
     }
 

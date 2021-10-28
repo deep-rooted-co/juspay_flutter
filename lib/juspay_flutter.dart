@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 
 class Juspay {
-  late MethodChannel _juspay;
+  static MethodChannel _juspay = const MethodChannel('juspay');
   final Function onInitiateResult;
   final Function onProcessResult;
   final Function onShowLoader;
@@ -16,11 +16,18 @@ class Juspay {
     required this.onShowLoader,
     required this.onHideLoader,
   }) {
-    _juspay = const MethodChannel('juspay');
     _juspay.setMethodCallHandler(_juspayCallbacks);
   }
 
-  Future<String> prefetch(Map<String, dynamic> params) async {
+  void dispose() {
+    _juspay.setMethodCallHandler(null);
+  }
+
+  Future<bool?> isInitiated() async {
+    return _juspay.invokeMethod<bool>('isInitiated');
+  }
+
+  static Future<String> prefetch(Map<String, dynamic> params) async {
     var result = await _juspay.invokeMethod('prefetch', <String, dynamic>{
       'params': params,
     });
