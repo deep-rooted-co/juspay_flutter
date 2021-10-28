@@ -19,11 +19,16 @@ public class SwiftJuspayFlutterPlugin: NSObject, FlutterPlugin {
     }
 
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-        let args = call.arguments as! Dictionary<String, Any>
         switch call.method {
-        case "prefetch": prefetch(args["params"] as! [String: Any], result)
-        case "initiate": initiate(args["params"] as! [String: Any], result)
-        case "process": process(args["params"] as! [String: Any], result)
+        case "prefetch":
+            let args = call.arguments as! Dictionary<String, Any>
+            prefetch(args["params"] as! [String: Any], result)
+        case "initiate":
+            let args = call.arguments as! Dictionary<String, Any>
+            initiate(args["params"] as! [String: Any], result)
+        case "process":
+            let args = call.arguments as! Dictionary<String, Any>
+            process(args["params"] as! [String: Any], result)
         case "terminate": terminate(result)
         case "isInitialised": isInitialised(result)
         default: result(FlutterMethodNotImplemented)
