@@ -54,6 +54,10 @@ class Juspay {
     return result.toString();
   }
 
+  void onBackPress() {
+    _juspay.invokeMethod('backPress');
+  }
+
   Future<dynamic> _juspayCallbacks(MethodCall methodCall) async {
     switch (methodCall.method) {
       case 'onShowLoader':
