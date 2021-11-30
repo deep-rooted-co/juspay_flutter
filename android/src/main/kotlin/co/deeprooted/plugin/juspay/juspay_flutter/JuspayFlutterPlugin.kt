@@ -63,6 +63,7 @@ class JuspayFlutterPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, Plug
             "process" -> process(call.argument<Map<String, Any>>("params"), result)
             "terminate" -> terminate(result)
             "isInitialised" -> isInitialised(result)
+            "backPress" -> onBackPressed()
             else -> result.notImplemented()
         }
     }
@@ -137,4 +138,9 @@ class JuspayFlutterPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, Plug
         hyperServices!!.terminate()
         result.success(true)
     }
+
+    private fun onBackPressed() {
+        hyperServices!!.onBackPressed()
+    }
 }
+
