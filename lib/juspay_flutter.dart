@@ -54,8 +54,9 @@ class Juspay {
     return result.toString();
   }
 
-  void onBackPress() {
-    _juspay.invokeMethod('backPress');
+  Future<String> onBackPress() async {
+    var result = await _juspay.invokeMethod('backPress');
+    return result.toString();
   }
 
   Future<dynamic> _juspayCallbacks(MethodCall methodCall) async {

@@ -139,8 +139,14 @@ class JuspayFlutterPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, Plug
         result.success(true)
     }
 
-    private fun onBackPressed() {
-        hyperServices!!.onBackPressed()
+    private fun onBackPressed(result: Result) {
+        try{
+            hyperServices!!.onBackPressed()
+            result.success(true)
+        }
+        catch(e: Exception){
+            result.error("BACKPRESS_ERROR", e.localizedMessage, e)
+        }
     }
 }
 
