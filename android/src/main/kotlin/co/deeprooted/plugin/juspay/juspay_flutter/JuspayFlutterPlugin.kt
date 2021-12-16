@@ -32,10 +32,14 @@ class JuspayFlutterPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, Plug
     }
 
     override fun onAttachedToActivity(binding: ActivityPluginBinding) {
-        this.binding = binding
-        val fragmentActivity = binding.activity as FragmentActivity
-        hyperServices = HyperServices(fragmentActivity)
-        binding.addActivityResultListener(this)
+        try {
+            this.binding = binding
+            val fragmentActivity = binding.activity as FragmentActivity
+            hyperServices = HyperServices(fragmentActivity)
+            binding.addActivityResultListener(this)
+        } catch (e: Exception) {
+            result.error("ON_ATTACHED_TO_ACTIVITY_ERROR", e.message, e)
+        }
     }
 
     override fun onDetachedFromActivityForConfigChanges() {
@@ -52,8 +56,12 @@ class JuspayFlutterPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, Plug
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?): Boolean {
-        hyperServices!!.onActivityResult(requestCode, resultCode, data!!)
-        return true
+        try {
+            hyperServices!!.onActivityResult(requestCode, resultCode, data!!)
+            return true
+        } catch(e: Exception) {
+            result.error("ON_ACTIVITY_RESULT_ERROR", e.localizedMessage, e)
+        }
     }
 
     override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
