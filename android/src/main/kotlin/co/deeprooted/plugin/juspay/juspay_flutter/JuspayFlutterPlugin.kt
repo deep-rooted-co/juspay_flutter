@@ -52,8 +52,12 @@ class JuspayFlutterPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, Plug
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?): Boolean {
-        hyperServices!!.onActivityResult(requestCode, resultCode, data!!)
-        return true
+        try {
+            hyperServices!!.onActivityResult(requestCode, resultCode, data!!)
+            return true
+        } catch (e: Exception) {
+            return false;
+        }
     }
 
     override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
