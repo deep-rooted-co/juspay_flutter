@@ -38,7 +38,6 @@ class JuspayFlutterPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, Plug
             hyperServices = HyperServices(fragmentActivity)
             binding.addActivityResultListener(this)
         } catch (e: Exception) {
-            result.error("ON_ATTACHED_TO_ACTIVITY_ERROR", e.message, e)
         }
     }
 
@@ -60,7 +59,6 @@ class JuspayFlutterPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, Plug
             hyperServices!!.onActivityResult(requestCode, resultCode, data!!)
             return true
         } catch(e: Exception) {
-            result.error("ON_ACTIVITY_RESULT_ERROR", e.localizedMessage, e)
         }
     }
 
