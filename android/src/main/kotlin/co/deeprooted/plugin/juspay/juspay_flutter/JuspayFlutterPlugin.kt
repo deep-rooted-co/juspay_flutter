@@ -102,7 +102,7 @@ class JuspayFlutterPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, Plug
             }
 
             override fun notImplemented() {
-                throw NotImplementedError()
+                Log.e(this.javaClass.canonicalName, "notImplemented")
             }
         }
         val callback = object : HyperPaymentsCallbackAdapter() {
