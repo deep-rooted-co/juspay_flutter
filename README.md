@@ -11,7 +11,7 @@ A flutter plugin for juspay payment SDK.
 dependencies:
   juspay_flutter:
     git:
-      url: git@github.com:deep-rooted-co/juspay_flutter.git
+      url: https://github.com/deep-rooted-co/juspay_flutter.git
       ref: <Git Commit SHA>
 ```
 **Note**: This method is only until we get this plugin published to pub.dev
