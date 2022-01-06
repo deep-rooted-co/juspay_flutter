@@ -4,7 +4,7 @@ A flutter plugin for juspay payment SDK.
 
 [![CI](https://github.com/deep-rooted-co/juspay_flutter/actions/workflows/main.yml/badge.svg)](https://github.com/deep-rooted-co/juspay_flutter/actions/workflows/main.yml)
 
-## Flutter Setup
+### 1. Flutter Setup
 
 1. Add plugin dependency in `pubspec.yaml`
 ```yaml
@@ -16,7 +16,7 @@ dependencies:
 ```
 **Note**: This method is only until we get this plugin published to pub.dev
 
-## Android Setup
+### 2. Android Setup
 
 1. Add to `android/build.gradle`
 ```gradle
@@ -46,7 +46,7 @@ apply plugin: 'hypersdk-asset-plugin'
 clientId = <your client id>
 ```
 
-## iOS Setup
+### 3. iOS Setup
 
 1. In `ios/Podfile`
 ```
