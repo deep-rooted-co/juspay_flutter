@@ -25,6 +25,9 @@ rootProject.allprojects {
         maven {
             url "https://maven.juspay.in/jp-build-packages/hyper-sdk/"
         }
+        maven {
+            url "https://maven.getsimpl.com"
+        }
     }
 }
 
@@ -45,4 +48,5 @@ android {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'in.juspay:hypersdk:2.0.3-rc.46'
+    implementation "com.simpl.android:fingerprintSDK:1.1.2"
 }
