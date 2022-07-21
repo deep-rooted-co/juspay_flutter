@@ -47,6 +47,6 @@ android {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'in.juspay:hypersdk:2.0.3-rc.46'
+    implementation 'in.juspay:hypersdk:2.0.4-rc.78'
     implementation "com.simpl.android:fingerprintSDK:1.1.2"
 }
